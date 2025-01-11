@@ -110,30 +110,46 @@
   text-align: center;
   padding-top: 20px;
 }
-.skillsData {
+.skillsData, .skillsLearning {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 10px;
   justify-items: center;
-  padding-left: 30%;
 }
 
-.skill-item {
+.skillItem , .skillLearnItem{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.skill-item img {
+.skillItem img , .skillLearnItem img{
   margin-bottom: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+.skillLearnItem{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+.skillLearnItem:hover{
+  transform: scale(1.2);
+}
+.mySkillsHeader{
+  background-color: #00c8fe;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #ffffff;
+  text-align: center;
 }
 #nameHeader{
   padding-left: 40px;
   transition: transform 0.2s ease-in-out;
 }
 #experienceImages{
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 300px;
+  max-height: 300px;
+  vertical-align: center;
 }
 a{
   text-decoration: none;
@@ -147,4 +163,34 @@ th{
   color: #00c8fe;
   font-size: 40px;
   text-align: center;
+}
+table tr td {
+  width: 50%;
+}
+td:nth-child(2){
+  text-align: left;
+}
+td:first-child {
+  vertical-align: center;
+  position: relative;
+  text-align: center;
+}
+
+td:first-child h1 {
+  color: #00c8fe;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+td {
+  text-align: center;
+  vertical-align: middle;
+  padding-bottom: 40px;
+}
+td p {
+  margin: 0 !important;
+}
+table{
+  margin-bottom: 50px;
 }

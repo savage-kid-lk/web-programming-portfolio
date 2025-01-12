@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("emile-perron-xrVDYZRGdw4-unsplash.jpg");
+  background-image: url("desola-lanre-ologun-vII7qKAk-9A-unsplash.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -22,7 +22,7 @@
   padding: 0;
   color: #00c8fe;
   text-align: center;
-  text-shadow: 2px 2px 5px #333;
+  text-shadow: 2px 2px 0px #ffffff;
 }
 .navClass{
   display: inline-block;
@@ -58,7 +58,7 @@
   margin-top: 35px;
   margin-bottom: 35px;
 }
-.aboutSummary h1{
+.aboutSummary h1, #scrollOnName{
   color: #00c8fe;
 }
 .aboutSummary p{
@@ -142,6 +142,35 @@
   color: #ffffff;
   text-align: center;
 }
+.learnJavaDiv, .learnHTMLDiv, .learnCSSDiv, .learnJavaScriptDiv, .learnPythonDiv, .learnMySQLDiv, #clickLinkInstruction{
+  display: none;
+}
+.learnASkill a{
+  color: #00c8fe;
+}
+.learnASkill{
+  text-align: center;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+.contactMe{
+  padding-top: 0px;
+  padding-left: 35px;
+  padding-bottom: 35px;
+}
+.myProjects table tr td:first-child {
+  width: 70%;
+}
+#clickLinkInstruction , .myProjects th, .navDataSummary th{
+  background-color: #00c8fe;
+  width: 100%;
+  color: #ffffff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+}
 #nameHeader{
   padding-left: 40px;
   transition: transform 0.2s ease-in-out;
@@ -193,4 +222,7 @@ td p {
 }
 table{
   margin-bottom: 50px;
+}
+html{
+  scroll-behavior: smooth;
 }

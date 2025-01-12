@@ -161,6 +161,9 @@
 .myProjects table tr td:first-child {
   width: 70%;
 }
+.navDataSummary table tr td:first-child {
+  width: 20%;
+}
 #clickLinkInstruction , .myProjects th, .navDataSummary th{
   background-color: #00c8fe;
   width: 100%;

@@ -232,3 +232,148 @@ table{
 html{
   scroll-behavior: smooth;
 }
+
+
+/* Existing CSS */
+
+/* Additions for responsiveness */
+@media screen and (max-width: 768px) {
+  /* Adjust the header and navigation for smaller screens */
+  .headerAndNav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  /* Adjust display decoration text size and padding */
+  .displayDecoration {
+    font-size: 24px; /* Smaller font for smaller screens */
+    padding: 10px;
+    height: auto; /* Allow dynamic height for smaller displays */
+  }
+
+  /* Ensure navigation elements fit within small screens */
+  .navClass, .footerNav {
+    margin-left: 10px;
+    padding-right: 15px;
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
+
+  /* Contact platforms adjustments */
+  .contactPlatforms, .footerNavClass {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  /* About section adjustments */
+  .aboutSummary img {
+    margin-top: 20px;
+    width: 80%; /* Scale down for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .aboutSummary p {
+    padding-right: 10px;
+    font-size: 14px; /* Adjust text size */
+  }
+
+  /* Skills section adjustments */
+  .skillsData, .skillsLearning {
+    grid-template-columns: repeat(2, 1fr); /* Fewer columns for smaller screens */
+    gap: 5px;
+  }
+
+  .skillLearnItem, .skillItem {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .skillLearnItem img, .skillItem img {
+    width: 80px; /* Scale images for small screens */
+    height: auto;
+  }
+
+  /* GitHub info adjustments */
+  .gitHubInfo {
+    height: auto; /* Allow dynamic height */
+    padding: 10px;
+    text-align: center;
+  }
+
+  .gitHubInfo h3 {
+    margin-left: 0;
+    font-size: 18px;
+  }
+
+  .gitHubInfo p {
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  .gitHubInfo a {
+    position: static;
+    float: none;
+    margin: 10px auto 0;
+    display: block;
+  }
+
+  /* Footer adjustments */
+  .copyright {
+    font-size: 12px; /* Smaller font for footer text */
+  }
+
+  /* Table adjustments */
+  table {
+    width: 100%; /* Make tables responsive */
+    margin-bottom: 20px;
+  }
+
+  table tr td {
+    width: 100%; /* Allow cells to stack */
+    display: block; /* Stack rows for smaller screens */
+    text-align: center;
+  }
+
+  td:first-child h1 {
+    font-size: 24px; /* Adjust title size */
+  }
+
+  /* Miscellaneous adjustments */
+  th {
+    font-size: 20px; /* Adjust header font size */
+  }
+
+  #experienceImages {
+    max-width: 100%;
+    height: auto; /* Scale images dynamically */
+  }
+
+  footer {
+    font-size: 14px; /* Adjust footer font size */
+  }
+
+  .learnASkill {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Extra small devices */
+  .headerAndNav {
+    padding: 5px;
+  }
+
+  .navClass, .footerNav {
+    font-size: 12px; /* Further reduce text size */
+  }
+
+  .displayDecoration {
+    font-size: 18px;
+  }
+
+  .skillsData, .skillsLearning {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+  }
+}

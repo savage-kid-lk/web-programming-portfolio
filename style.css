@@ -14,7 +14,7 @@ body {
   line-height: 1.6;
 }
 
-.headerAndNav {
+.headerAndNav{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,84 +24,234 @@ body {
   padding: 1rem;
 }
 
-.navClass {
+.navClass{
   display: inline-block;
   transition: transform 0.2s ease-in-out;
   margin-left: 20px;
   color: #000000;
   padding-right: 30px;
-  font-size: 1.2rem;
 }
 
-.navClass:hover, #nameHeader:hover {
-  transform: scale(1.2);
-  color: #00c8fe;
-}
-
-.displayDecoration {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url("desola-lanre-ologun-vII7qKAk-9A-unsplash.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  font-size: 2.5rem;
-  height: 100vh;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  color: #00c8fe;
-  text-align: center;
-  text-shadow: 2px 2px 0px #ffffff;
-}
-
-footer {
-  padding-top: 20px;
-  background-color: #00c8fe;
-  color: #ffffff;
-  padding: 1rem;
-}
-
-.footerNav {
+.footerNav{
   display: inline-block;
   transition: transform 0.2s ease-in-out;
   margin-left: 20px;
   color: #ffffff;
   padding-right: 30px;
-  font-size: 1.2rem;
 }
 
-.footerNav:hover {
+.footerNav:hover{
   transform: scale(1.2);
 }
 
-.mySkillsHeader {
+.footerNavClass{
+  padding-bottom: 30px;
+}
+
+.navClass:hover, #nameHeader:hover{
+  transform: scale(1.2);
+  color: #00c8fe;
+}
+
+.contactPlatforms, .footerNavClass{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactPlatforms a{
+  margin: 5px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.aboutSummary h1, #scrollOnName{
+  color: #00c8fe;
+}
+
+.aboutSummary p{
+  padding-right: 30px;
+}
+
+.aboutSummary {
+  text-align: center;
+}
+
+.aboutSummary img{
+  margin-top: 60px;
+  border: 10px solid magenta;
+  border-radius: 30%;
+  padding-left: 0px;
+}
+
+.contactPlatforms img{
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  padding: 8px;
+}
+
+.gitHubInfo{
+  background-color: #ffffff;
+  width: 98%;
+  color: #000000;
+  margin-left: auto;
+  margin-right: auto;
+  height: 170px;
+}
+
+.gitHubInfo h3,p{
+  margin-left: 60px;
+}
+
+.gitHubInfo h3{
+  padding-top: 40px;
+}
+
+.gitHubInfo a{
   background-color: #00c8fe;
-  padding: 1rem;
+  padding: 10px;
+  color: #ffffff;
+  border-radius: 5px;
+  margin-right: 14%;
+  float: right;
+  position: relative;
+  top: -55px;
+}
+
+.copyright{
+  height: 80px;
+  color: #000000;
+  background-color: #ffffff;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.skillsData, .skillsLearning {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.skillItem , .skillLearnItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skillItem img , .skillLearnItem img{
+  margin-bottom: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.skillLearnItem{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.skillLearnItem:hover{
+  transform: scale(1.2);
+}
+
+.mySkillsHeader{
+  background-color: #00c8fe;
+  padding-top: 10px;
+  padding-bottom: 10px;
   color: #ffffff;
   text-align: center;
-  font-size: 2rem;
 }
 
-.learnASkill {
-  text-align: center;
-  padding: 1rem;
+.learnJavaDiv, .learnHTMLDiv, .learnCSSDiv, .learnJavaScriptDiv, .learnPythonDiv, .learnMySQLDiv, #clickLinkInstruction{
+  display: none;
 }
 
-.contactMe {
-  padding: 1rem;
-}
-
-table {
-  margin-bottom: 50px;
-  width: 100%;
-}
-
-th {
+.learnASkill a{
   color: #00c8fe;
-  font-size: 1.5rem;
+}
+
+.learnASkill{
   text-align: center;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.contactMe{
+  padding-top: 0px;
+  padding-left: 35px;
+  padding-bottom: 35px;
+}
+
+.myProjects table tr td:first-child {
+  width: 70%;
+}
+
+.navDataSummary table tr td:first-child {
+  width: 20%;
+}
+
+#clickLinkInstruction , .myProjects th, .navDataSummary th{
+  background-color: #00c8fe;
+  width: 100%;
+  color: #ffffff;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#nameHeader{
+  padding-left: 40px;
+  transition: transform 0.2s ease-in-out;
+}
+
+#experienceImages{
+  max-width: 300px;
+  max-height: 300px;
+  vertical-align: center;
+}
+
+a{
+  text-decoration: none;
+}
+
+footer{
+  padding-top: 20px;
+  background-color: #00c8fe;
+  color: #ffffff;
+}
+
+th{
+  color: #00c8fe;
+  font-size: 40px;
+  text-align: center;
+}
+
+.navDataSummary table tr td:first-child {
+  width: 20%;
+}
+
+table tr td {
+  width: 50%;
+}
+
+td:nth-child(2){
+  text-align: left;
+}
+
+td:first-child {
+  vertical-align: center;
+  position: relative;
+  text-align: center;
+}
+
+td:first-child h1 {
+  color: #00c8fe;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 td {
@@ -114,13 +264,37 @@ td p {
   margin: 0 !important;
 }
 
+table{
+  margin-bottom: 50px;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.displayDecoration{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("desola-lanre-ologun-vII7qKAk-9A-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-size: 36px;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #00c8fe;
+  text-align: center;
+  text-shadow: 2px 2px 0px #ffffff;
+}
+
+/* Media Queries */
+
 /* For mobile devices */
 @media only screen and (max-width: 768px) {
   .displayDecoration {
-    font-size: 1.5rem;
-  }
-
-  .mySkillsHeader {
     font-size: 1.5rem;
   }
 
@@ -143,10 +317,6 @@ td p {
     font-size: 2rem;
   }
 
-  .mySkillsHeader {
-    font-size: 2rem;
-  }
-
   .navClass {
     font-size: 1.2rem;
   }
@@ -156,6 +326,3 @@ td p {
   }
 
   table {
-    font-size: 1rem;
-  }
-}

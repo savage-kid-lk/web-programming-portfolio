@@ -1,13 +1,44 @@
-.headerAndNav{
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.headerAndNav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #e7e9e9;
   width: 100%;
   text-shadow: 2px 2px 5px #333;
-
+  padding: 1rem;
 }
-.displayDecoration{
+
+.navClass {
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+  margin-left: 20px;
+  color: #000000;
+  padding-right: 30px;
+  font-size: 1.2rem;
+}
+
+.navClass:hover, #nameHeader:hover {
+  transform: scale(1.2);
+  color: #00c8fe;
+}
+
+.displayDecoration {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,7 +46,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  font-size: 36px;
+  font-size: 2.5rem;
   height: 100vh;
   width: 100%;
   margin: 0;
@@ -24,356 +55,107 @@
   text-align: center;
   text-shadow: 2px 2px 0px #ffffff;
 }
-.navClass{
-  display: inline-block;
-  transition: transform 0.2s ease-in-out;
-  margin-left: 20px;
-  color: #000000;
-  padding-right: 30px;
-}
-.footerNav{
-  display: inline-block;
-  transition: transform 0.2s ease-in-out;
-  margin-left: 20px;
-  color: #ffffff;
-  padding-right: 30px;
-}
-.footerNav:hover{
-  transform: scale(1.2);
-}
-.footerNavClass{
-  padding-bottom: 30px;
-}
-.navClass:hover, #nameHeader:hover{
-  transform: scale(1.2);
-  color: #00c8fe;
-}
-.contactPlatforms, .footerNavClass{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.contactPlatforms a{
-  margin: 5px;
-  margin-top: 35px;
-  margin-bottom: 35px;
-}
-.aboutSummary h1, #scrollOnName{
-  color: #00c8fe;
-}
-.aboutSummary p{
-  padding-right: 30px;
-}
-.aboutSummary {
-  text-align: center;
-}
-.aboutSummary img{
-  margin-top: 60px;
-  border: 10px solid magenta;
-  border-radius: 30%;
-  padding-left: 0px;
-}
-.contactPlatforms img{
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  padding: 8px;
 
-}
-.gitHubInfo{
-  background-color: #ffffff;
-  width: 98%;
-  color: #000000;
-  margin-left: auto;
-  margin-right: auto;
-  height: 170px;
-}
-.gitHubInfo h3,p{
-  margin-left: 60px;
-}
-.gitHubInfo h3{
-  padding-top: 40px;
-}
-.gitHubInfo a{
-  background-color: #00c8fe;
-  padding: 10px;
-  color: #ffffff;
-  border-radius: 5px;
-  margin-right: 14%;
-  float: right;
-  position: relative;
-  top: -55px;
-}
-.copyright{
-  height: 80px;
-  color: #000000;
-  background-color: #ffffff;
-  text-align: center;
+footer {
   padding-top: 20px;
-}
-.skillsData, .skillsLearning {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 10px;
-  justify-items: center;
+  background-color: #00c8fe;
+  color: #ffffff;
+  padding: 1rem;
 }
 
-.skillItem , .skillLearnItem{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.skillItem img , .skillLearnItem img{
-  margin-bottom: 10px;
+.footerNav {
+  display: inline-block;
   transition: transform 0.2s ease-in-out;
+  margin-left: 20px;
+  color: #ffffff;
+  padding-right: 30px;
+  font-size: 1.2rem;
 }
-.skillLearnItem{
-  padding-top: 60px;
-  padding-bottom: 60px;
-  text-align: center;
-}
-.skillLearnItem:hover{
+
+.footerNav:hover {
   transform: scale(1.2);
 }
-.mySkillsHeader{
+
+.mySkillsHeader {
   background-color: #00c8fe;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 1rem;
   color: #ffffff;
   text-align: center;
+  font-size: 2rem;
 }
-.learnJavaDiv, .learnHTMLDiv, .learnCSSDiv, .learnJavaScriptDiv, .learnPythonDiv, .learnMySQLDiv, #clickLinkInstruction{
-  display: none;
-}
-.learnASkill a{
-  color: #00c8fe;
-}
-.learnASkill{
+
+.learnASkill {
   text-align: center;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding: 1rem;
 }
-.contactMe{
-  padding-top: 0px;
-  padding-left: 35px;
-  padding-bottom: 35px;
+
+.contactMe {
+  padding: 1rem;
 }
-.myProjects table tr td:first-child {
-  width: 70%;
-}
-.navDataSummary table tr td:first-child {
-  width: 20%;
-}s
-#clickLinkInstruction , .myProjects th, .navDataSummary th{
-  background-color: #00c8fe;
+
+table {
+  margin-bottom: 50px;
   width: 100%;
-  color: #ffffff;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  text-align: center;
-  padding-left: 0px;
-  padding-right: 0px;
 }
-#nameHeader{
-  padding-left: 40px;
-  transition: transform 0.2s ease-in-out;
-}
-#experienceImages{
-  max-width: 300px;
-  max-height: 300px;
-  vertical-align: center;
-}
-a{
-  text-decoration: none;
-}
-footer{
-  padding-top: 20px;
-  background-color: #00c8fe;
-  color: #ffffff;
-}
-th{
+
+th {
   color: #00c8fe;
-  font-size: 40px;
-  text-align: center;
-}
-.navDataSummary table tr td:first-child {
-  width: 20%;
-}
-table tr td {
-  width: 50%;
-}
-td:nth-child(2){
-  text-align: left;
-}
-td:first-child {
-  vertical-align: center;
-  position: relative;
+  font-size: 1.5rem;
   text-align: center;
 }
 
-td:first-child h1 {
-  color: #00c8fe;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
 td {
   text-align: center;
   vertical-align: middle;
   padding-bottom: 40px;
 }
+
 td p {
   margin: 0 !important;
 }
-table{
-  margin-bottom: 50px;
-}
-html{
-  scroll-behavior: smooth;
-}
 
-
-/* Existing CSS */
-
-/* Additions for responsiveness */
-@media screen and (max-width: 768px) {
-  /* Adjust the header and navigation for smaller screens */
-  .headerAndNav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
-  }
-
-  /* Adjust display decoration text size and padding */
+/* For mobile devices */
+@media only screen and (max-width: 768px) {
   .displayDecoration {
-    font-size: 24px; /* Smaller font for smaller screens */
-    padding: 10px;
-    height: auto; /* Allow dynamic height for smaller displays */
+    font-size: 1.5rem;
   }
 
-  /* Ensure navigation elements fit within small screens */
-  .navClass, .footerNav {
-    margin-left: 10px;
-    padding-right: 15px;
-    font-size: 14px; /* Reduce font size for smaller screens */
+  .mySkillsHeader {
+    font-size: 1.5rem;
   }
 
-  /* Contact platforms adjustments */
-  .contactPlatforms, .footerNavClass {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
+  .navClass {
+    font-size: 1rem;
   }
 
-  /* About section adjustments */
-  .aboutSummary img {
-    margin-top: 20px;
-    width: 80%; /* Scale down for smaller screens */
-    height: auto; /* Maintain aspect ratio */
+  .footerNav {
+    font-size: 1rem;
   }
 
-  .aboutSummary p {
-    padding-right: 10px;
-    font-size: 14px; /* Adjust text size */
-  }
-
-  /* Skills section adjustments */
-  .skillsData, .skillsLearning {
-    grid-template-columns: repeat(2, 1fr); /* Fewer columns for smaller screens */
-    gap: 5px;
-  }
-
-  .skillLearnItem, .skillItem {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  .skillLearnItem img, .skillItem img {
-    width: 80px; /* Scale images for small screens */
-    height: auto;
-  }
-
-  /* GitHub info adjustments */
-  .gitHubInfo {
-    height: auto; /* Allow dynamic height */
-    padding: 10px;
-    text-align: center;
-  }
-
-  .gitHubInfo h3 {
-    margin-left: 0;
-    font-size: 18px;
-  }
-
-  .gitHubInfo p {
-    margin-left: 0;
-    font-size: 14px;
-  }
-
-  .gitHubInfo a {
-    position: static;
-    float: none;
-    margin: 10px auto 0;
-    display: block;
-  }
-
-  /* Footer adjustments */
-  .copyright {
-    font-size: 12px; /* Smaller font for footer text */
-  }
-
-  /* Table adjustments */
   table {
-    width: 100%; /* Make tables responsive */
-    margin-bottom: 20px;
-  }
-
-  table tr td {
-    width: 100%; /* Allow cells to stack */
-    display: block; /* Stack rows for smaller screens */
-    text-align: center;
-  }
-
-  td:first-child h1 {
-    font-size: 24px; /* Adjust title size */
-  }
-
-  /* Miscellaneous adjustments */
-  th {
-    font-size: 20px; /* Adjust header font size */
-  }
-
-  #experienceImages {
-    max-width: 100%;
-    height: auto; /* Scale images dynamically */
-  }
-
-  footer {
-    font-size: 14px; /* Adjust footer font size */
-  }
-
-  .learnASkill {
-    padding-left: 20px;
-    padding-right: 20px;
+    font-size: 0.8rem;
   }
 }
 
-@media screen and (max-width: 480px) {
-  /* Extra small devices */
-  .headerAndNav {
-    padding: 5px;
-  }
-
-  .navClass, .footerNav {
-    font-size: 12px; /* Further reduce text size */
-  }
-
+/* For tablet devices */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
   .displayDecoration {
-    font-size: 18px;
+    font-size: 2rem;
   }
 
-  .skillsData, .skillsLearning {
-    grid-template-columns: 1fr; /* Single column for very small screens */
+  .mySkillsHeader {
+    font-size: 2rem;
+  }
+
+  .navClass {
+    font-size: 1.2rem;
+  }
+
+  .footerNav {
+    font-size: 1.2rem;
+  }
+
+  table {
+    font-size: 1rem;
   }
 }

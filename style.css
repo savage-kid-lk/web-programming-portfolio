@@ -180,6 +180,7 @@ html{
   #menuNavigation a{
     color: #000000;
     text-shadow: none;
+    padding-top: 10px;
   }
 
   .heading{

@@ -6,41 +6,34 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" charset="utf-8"></script>
   </head>
-  <body>
+  <body onclick="removeMenu()">
     <header>
       <div class="headerAndNav">
-        <a href="#scrollTo" id="scrollOnName"><h1 id="nameHeader">Letago Kekana</h1></a>
-
+        <a href="#scrollTo" id="scrollOnName" ><h1 id="nameHeader">Letago Kekana</h1></a>
+        <img onclick="showMenu()" id="menuBar" src="icons8-menu-50.png" height="25" width="25">
         <nav id="menuNavigation">
-          <a class="navClass" href="index.html" id="homeLink">Home</a>
-          <a class="navClass" href="aboutMe.html" id="aboutLink">About</a>
-          <a  class="navClass" href="skills.html" id="skillsLink">Skills</a>
-          <a class="navClass" href="projects.html" id="projectLink">Project</a>
-          <a class="navClass" href="contact.html" id="contactLink">Contact</a>
+          <a class="navClass" href="index.html" id="homeLink">Home</a><br>
+          <a class="navClass" href="aboutMe.html" id="aboutLink">About</a><br>
+          <a  class="navClass" href="skills.html" id="skillsLink">Skills</a><br>
+          <a class="navClass" href="projects.html" id="projectLink">Project</a><br>
+          <a class="navClass" href="contact.html" id="contactLink">Contact</a><br>
         </nav>
       </div>
     </header>
       <div class="homePage">
         <div class="displayDecoration">
-          <h1 id="developerPortfolio">Web Developer Portfolio<br>Of<br>Letago Kekana</h1>
+          <h1 id="developerPortfolio">Web Developer Portfolio Of Letago Kekana</h1>
         </div>
         <div class="navDataSummary" id="scrollTo">
-          <table>
-            <tr>
-              <th colspan="2"><b>SUMMARY</b></th>
-            </tr>
-            <tr>
-              <td><h1>About me</h1></td>
-              <td><p>As a highly motivated and ambitious computer science student at Tshwane University of Technology, I possess a
-                unique blend of technical expertise and soft skills that enable me to drive innovation and deliver results. With a
-                solid foundation in leadership, teamwork, and communication, I excel in collaborative environments and am passionate
-                about harnessing my proficiency in various programming languages and video editing to develop cutting-edge solutions.
-                As a rapid learner and adaptable team player, I thrive in fast-paced settings and am eager to leverage my skills to
-                tackle complex challenges and contribute to the success of a forward-thinking organization in the tech industry.</p></td>
-            </tr>
-            <tr>
-              <td><h1>My Skills</h1></td>
-              <td>
+          <b><h1 id="summaryHeading">SUMMARY</h1></b>
+          <h1 class="heading">About me</h1>
+          <p>As a highly motivated and ambitious computer science student at Tshwane University of Technology, I possess a
+              unique blend of technical expertise and soft skills that enable me to drive innovation and deliver results. With a
+              solid foundation in leadership, teamwork, and communication, I excel in collaborative environments and am passionate
+              about harnessing my proficiency in various programming languages and video editing to develop cutting-edge solutions.
+              As a rapid learner and adaptable team player, I thrive in fast-paced settings and am eager to leverage my skills to
+              tackle complex challenges and contribute to the success of a forward-thinking organization in the tech industry.</p>
+              <h1 class="heading" id="skillsHeading">My Skills</h1>
                 <div class="skillsData">
                   <div class="skillItem">
                     <img src="java-programming-language-icon.png" width="60" height="65">
@@ -66,26 +59,29 @@
                     <img src="mysql-icon.png" width="60" height="65">
                     <span>MySQL</span>
                   </div>
+                  <div class="skillItem">
+                    <img src="pngwing.com.png" width="60" height="65">
+                    <span>Linux</span>
+                  </div>
+                  <div class="skillItem">
+                    <img src="office.png" width="60" height="65">
+                    <span>Microsoft Office</span>
+                  </div>
                 </div>
-              </td>
-            </tr>
-            <tr>
-              <td><h1>My Projects</h1></td>
-              <td><h2>Web Developer Portfolio</h2>
-                <h4>Project Description:</h4>
+                <h1 id="projectsHeading">My Projects</h1>
+                <h2 class="heading">Web Developer Portfolio</h2>
+                <h4 id="projectDesc">Project Description:</h4>
                 <p>As a skilled web developer, I have created a comprehensive online portfolio that showcases my expertise in
                    designing and developing responsive, user-friendly websites. With a strong foundation in HTML, CSS, and JavaScript,
                    I have built a platform that highlights my ability to craft visually appealing and interactive web applications.</p>
-                 <a href="projects.html#webDeveloperPortfolio">Read more...</a> </td>
-            </tr>
-          </table>
+                 <a href="projects.html#webDeveloperPortfolio">Read more...</a>
         </div>
-      </div
+      </div>
   </body>
   <footer>
     <div class="gitHubInfo">
       <h3>View my projects on Github</h3>
-      <p>Web Developer and student Software engineer</p>
+      <p>Web Developer and Software engineer student</p>
       <a id="gitHubLink" href="https://github.com/savage-kid-lk">GIT HUB</a>
     </div>
     <div class="contactPlatforms">

@@ -58,50 +58,11 @@
   margin-top: 35px;
   margin-bottom: 35px;
 }
-.aboutSummary h1, #scrollOnName{
-  color: #00c8fe;
-}
-.aboutSummary p{
-  padding-right: 30px;
-}
-.aboutSummary {
-  text-align: center;
-}
-.aboutSummary img{
-  margin-top: 60px;
-  border: 10px solid magenta;
-  border-radius: 30%;
-  padding-left: 0px;
-}
 .contactPlatforms img{
   border: 2px solid #ffffff;
   border-radius: 50%;
   padding: 8px;
 
-}
-.gitHubInfo{
-  background-color: #ffffff;
-  width: 98%;
-  color: #000000;
-  margin-left: auto;
-  margin-right: auto;
-  height: 170px;
-}
-.gitHubInfo h3,p{
-  margin-left: 60px;
-}
-.gitHubInfo h3{
-  padding-top: 40px;
-}
-.gitHubInfo a{
-  background-color: #00c8fe;
-  padding: 10px;
-  color: #ffffff;
-  border-radius: 5px;
-  margin-right: 14%;
-  float: right;
-  position: relative;
-  top: -55px;
 }
 .copyright{
   height: 80px;
@@ -110,9 +71,25 @@
   text-align: center;
   padding-top: 20px;
 }
+#contactMeHeading{
+  padding-left: 10px;
+}
+.contactMe{
+  padding-top: 0px;
+  padding-left: 45px;
+  padding-bottom: 35px;
+}
+#experienceImages{
+  max-width: 300px;
+  max-height: 300px;
+  vertical-align: center;
+}
+
+/*MySkills style*/
+
 .skillsData, .skillsLearning {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   justify-items: center;
 }
@@ -128,8 +105,8 @@
   transition: transform 0.2s ease-in-out;
 }
 .skillLearnItem{
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   text-align: center;
 }
 .skillLearnItem:hover{
@@ -142,93 +119,183 @@
   color: #ffffff;
   text-align: center;
 }
-.learnJavaDiv, .learnHTMLDiv, .learnCSSDiv, .learnJavaScriptDiv, .learnPythonDiv, .learnMySQLDiv, #clickLinkInstruction{
+.learnJavaDiv, .learnHTMLDiv, .learnCSSDiv, .learnJavaScriptDiv, .learnPythonDiv, .learnMySQLDiv, .learnLinuxDiv, .learnOfficeDiv, #clickLinkInstruction{
   display: none;
 }
 .learnASkill a{
   color: #00c8fe;
 }
+#clickLinkInstruction{
+  background-color:#e7e9e9;
+  text-align: center;
+}
 .learnASkill{
   text-align: center;
-  padding-left: 60px;
-  padding-right: 60px;
 }
-.contactMe{
-  padding-top: 0px;
-  padding-left: 35px;
-  padding-bottom: 35px;
-}
-.myProjects table tr td:first-child {
-  width: 70%;
-}
-.navDataSummary table tr td:first-child {
-  width: 20%;
-}s
-#clickLinkInstruction , .myProjects th, .navDataSummary th{
-  background-color: #00c8fe;
-  width: 100%;
-  color: #ffffff;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  text-align: center;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-#nameHeader{
-  padding-left: 40px;
-  transition: transform 0.2s ease-in-out;
-}
-#experienceImages{
-  max-width: 300px;
-  max-height: 300px;
-  vertical-align: center;
-}
+
 a{
   text-decoration: none;
+}
+body{
+  padding: 0;
+  margin: 0;
 }
 footer{
   padding-top: 20px;
   background-color: #00c8fe;
   color: #ffffff;
 }
-th{
-  color: #00c8fe;
-  font-size: 40px;
-  text-align: center;
-}
-.navDataSummary table tr td:first-child {
-  width: 20%;
-}
-table tr td {
-  width: 50%;
-}
-td:nth-child(2){
-  text-align: left;
-}
-td:first-child {
-  vertical-align: center;
-  position: relative;
-  text-align: center;
-}
-
-td:first-child h1 {
-  color: #00c8fe;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-td {
-  text-align: center;
-  vertical-align: middle;
-  padding-bottom: 40px;
-}
-td p {
-  margin: 0 !important;
-}
-table{
-  margin-bottom: 50px;
-}
 html{
   scroll-behavior: smooth;
+}
+
+@media only screen and (max-width: 480px) {
+  #menuBar{
+    display: block;
+    position:relative;
+    padding-right: 30px;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+  #menuNavigation{
+    display: block;
+    color: #ffffff;
+    background-color: #d7d7d7;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: right;
+    top: 30px;
+    right: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+  }
+  #menuNavigation.show {
+        opacity: 1;
+        visibility: visible;
+      }
+  #menuNavigation a{
+    color: #000000;
+    text-shadow: none;
+  }
+
+  .heading{
+    margin: 0;
+    text-align: center;
+    background-color: #e7e9e9;
+  }
+  .navDataSummary p, #projectDesc{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .navDataSummary a{
+    padding-left: 15px;
+    color: red;
+  }
+  #summaryHeading, #projectsHeading{
+    background-color: #00c8fe;
+    text-align: center;
+    border-top: solid 1px;
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+  }
+  .skillsData{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .gitHubInfo{
+    background-color: #ffffff;
+    width: 95%;
+    color: #000000;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .gitHubInfo a{
+    background-color: #00c8fe;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 5px;
+  }
+  #nameHeader{
+    margin-left: 20px;
+    color: #00c8fe;
+  }
+
+  /*about me style*/
+  .aboutTop h1{
+
+    border-top: solid #00c8fe;
+  }
+  .aboutMeSummary img{
+    display: block;
+    margin: 0 auto;
+    border: solid 10px;
+    color: #00c8fe;
+    border-radius: 25%;
+    margin-top: 10px;
+    margin-top: 10px;
+  }
+  .aboutTop{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    text-align: center;
+    background-color: #e7e9e9;
+    border-top: solid #00c8fe;
+  }
+  .aboutMeSummary p{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /*projects style*/
+
+  #projectHeading{
+    padding-top: 0px;
+    margin-top: 0px;
+    border-top: solid #00c8fe 1px;
+    background-color:#e7e9e9;
+    text-align: center;
+  }
+  .myProjects p, .myProjects h2, .myProjects span{
+    padding: 10px;
+  }
+  .myProjects a{
+    display: block;
+    margin: 0 auto;
+    color: red;
+    text-align: center;
+    text-decoration: underline;
+  }
+  .myProjects img{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /*experience style*/
+  .experience img{
+    display: block;
+    margin: 0 auto;
+  }
+  .experienceImages{
+    border-bottom: solid 1px;
+    padding-bottom: 10px;
+  }
+  .experience h2{
+    text-align: center;
+    background-color:#e7e9e9;
+    border-top: solid #00c8fe 1px;
+  }
+  .experience h4, .experience p{
+    padding: 10px;
+  }
 }

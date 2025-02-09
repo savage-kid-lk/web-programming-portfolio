@@ -7,20 +7,23 @@
   </head>
   <header>
     <div class="headerAndNav">
-      <a href="index.html#scrollTo" id="scrollOnName"><h1 id="nameHeader">Letago Kekana</h1></a>
+      <a href="#scrollTo" id="scrollOnName" ><h1 id="nameHeader">Letago Kekana</h1></a>
+      <img onclick="showMenu()" id="menuBar" src="icons8-menu-50.png" height="25" width="25">
       <nav id="menuNavigation">
-        <a class="navClass" href="index.html" id="homeLink">Home</a>
-        <a onclick="aboutMe()" class="navClass" href="aboutMe.html" id="aboutLink">About</a>
-        <a  class="navClass" href="skills.html" id="skillsLink">Skills</a>
-        <a class="navClass" href="projects.html" id="projectLink">Project</a>
-        <a class="navClass" href="contact.html" id="contactLink">Contact</a>
+        <a class="navClass" href="index.html" id="homeLink">Home</a><br>
+        <a class="navClass" href="aboutMe.html" id="aboutLink">About</a><br>
+        <a  class="navClass" href="skills.html" id="skillsLink">Skills</a><br>
+        <a class="navClass" href="projects.html" id="projectLink">Project</a><br>
+        <a class="navClass" href="contact.html" id="contactLink">Contact</a><br>
       </nav>
     </div>
   </header>
-  <body>
-    <div class="aboutSummary">
-      <img src="20250110_182748.jpg" width="250" height="250">
-      <h1>About Me</h1>
+  <body onclick="removeMenu()">
+    <div class="aboutMeSummary">
+      <div class="aboutTop">
+        <img src="20250110_182748.jpg" width="250" height="250">
+        <h1>About Me</h1>
+      </div>
       <p><p>As a highly motivated and ambitious computer science student at Tshwane University of Technology, I possess a
         unique blend of technical expertise and soft skills that enable me to drive innovation and deliver results. With a
         solid foundation in leadership, teamwork, and communication, I excel in collaborative environments and am passionate
@@ -29,49 +32,26 @@
         tackle complex challenges and contribute to the success of a forward-thinking organization in the tech industry.</p></p>
     </div>
     <div class="experience">
-      <table>
-        <tr>
-          <th colspan="2"><b>PROFESSIONAL EXPERIENCE</b></th>
-        </tr>
-        <tr>
-          <td><img id="experienceImages" src="tutLogo.png" ></td>
-          <td><h4>Computer Science Student mentor</h4>
-          <p>Tshwane University of Technology, Polokwane Campus, Limpopo. February 2024 - November 2024
-          <br><br><b>Responsibilities:</b>
-          <br>Assist first year students educationally under assigned Modules
-          <br>Assist first year students with adjusting to the University life
-          <br>Assist first year students with getting familiar to the institution policies
-          <br>Assist first year students to the correct offices to enqure at<br>
-          <br><b>Modules Mentored:</b>
-          <br>Principles of Programming A(PPA115D): A first year module that focuses on introducing the basics of Java programming to first year
+      <h2>PROFESSIONAL EXPERIENCE</h2>
+      <div class="experienceImages"><img src="tutLogo.png" ></div>
+      <h4>Computer Science Student mentor</h4>
+      <p>Tshwane University of Technology, Polokwane Campus, Limpopo. February 2024 - November 2024
+      <br><br><b>Responsibilities:</b>
+      <br>Assist first year students educationally under assigned Modules
+      <br>Assist first year students with adjusting to the University life
+      <br>Assist first year students with getting familiar to the institution policies
+      <br>Assist first year students to the correct offices to enqure at<br>
+      <br><b>Modules Mentored:</b><br>
+      <br>Principles of Programming A(PPA115D):<br><br> A first year module that focuses on introducing the basics of Java programming to first year
         students, familiarising fundamental concepts and guidelines that govern the design, development, and testing of software programs. These
         principles include modularity, readability, scalability, maintainability, and efficiency, which ensure that programs are well-structured,
         easy to understand
-        <br><br>Principles of Programming B(PPB115D): This module is a continuation of PPA115D focusing on teaching the first year students how to
+        <br><br>Principles of Programming B(PPB115D):<br><br> This module is a continuation of PPA115D focusing on teaching the first year students how to
         apply the basics learned in PPA115D. The students are introduced to descrete classes which will later be used for object orientated Program(ming
-        <br><br>Computational Mathematics(COH115D): A first year Module that focuses on teching students to use mathematics to solve complex Programming
+        <br><br>Computational Mathematics(COH115D):<br><br> A first year Module that focuses on teching students to use mathematics to solve complex Programming
         problems that require excessive thinking. It covered Discrete structure principles, algorithms, binaries, and basic mathematics.
-        <br><br>Computer Fundementals A(CFA115D): Thismodule focused on the history of computers and teaches studens how to work with computer hardware
-        and networking.</p></td>
-        </tr>
-        <tr>
-        <td><img id="experienceImages" src="Meatrite.jpg" ></td>
-        <td>
-        <h4>General Worker</h4>
-        <p>Meatrite, Modimolle, Limpopo.
-          <br>&emsp;&emsp;February 2022 - January 2023
-          <br>&emsp;&emsp;June 2023 - July 2023
-          <br>&emsp;&emsp;November 2023 - January 2024
-          <br>&emsp;&emsp;June 2024 - July 2024
-          <br>&emsp;&emsp;November 2024 - January 2025
-        <br><br>I worked at this company during my gap year before enrolling in university, and fortunately, they also allowed me to work there during semester breaks.
-        <br><br><b>Responsibilities:</b>
-        <br>Operated the Polony making machine.
-        <br>Operated the Russian/Vienna shower timer computer.
-        <br>Maintained a hygienic and clean working environment.
-      </td>
-        </tr>
-      </table>
+        <br><br>Computer Fundementals A(CFA115D):<br><br> Thismodule focused on the history of computers and teaches studens how to work with computer hardware
+        and networking.</p>
     </div>
   </body>
   <script src="script.js"></script>

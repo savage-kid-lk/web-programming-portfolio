@@ -275,6 +275,7 @@ footer a:hover{
 }
 .learnASkill{
   text-align: center;
+  padding: 10px;
 }
 
 /*universal element styles*/
@@ -493,4 +494,20 @@ html{
     gap: 10px;
     justify-items: center;
   }
-}
+  /*footer style*/
+  .footerNavClass a{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .contactPlatforms a{
+    margin: 15px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+  .gitHubInfo{
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 15px;
+    max-width: 85%;
+  }

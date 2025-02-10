@@ -138,6 +138,10 @@
   margin-left: 20px;
   margin-right: 20px;
 }
+.screenshot{
+  border: solid 1px;
+  box-shadow: 4px 4px 0px grey;
+}
 .myProjects a{
   display: block;
   margin: 0 auto;

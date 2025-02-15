@@ -144,7 +144,7 @@
 }
 .myProjects a{
   display: block;
-  margin: 0 auto;
+  margin: 20px auto;
   text-align: center;
   color: red;
   text-decoration: underline;
@@ -511,3 +511,4 @@ html{
     padding: 15px;
     max-width: 85%;
   }
+}

@@ -137,6 +137,7 @@
 .screenshot, .myProjects p, .myProjects h2, .myProjects span{
   margin-left: 20px;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 .screenshot{
   border: solid 1px;
@@ -144,7 +145,8 @@
 }
 .myProjects a{
   display: block;
-  margin: 20px auto;
+  margin: 0 auto;
+  padding-top: 20px;
   text-align: center;
   color: red;
   text-decoration: underline;

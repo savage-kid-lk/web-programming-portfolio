@@ -1,0 +1,516 @@
+/*header and navigation style*/
+
+.headerAndNav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e7e9e9;
+  text-shadow: 2px 2px 5px #333;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+#menuBar{
+  display: none;
+}
+
+.navClass, #nameHeader{
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+  margin-left: 20px;
+  color: #000000;
+  padding-right: 30px;
+}
+.navClass:hover, #nameHeader:hover{
+  transform: scale(1.2);
+  color: #00c8fe;
+}
+#menuNavigation{
+  display: flex;
+}
+
+/*portfolio title style*/
+
+.displayDecoration{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("desola-lanre-ologun-vII7qKAk-9A-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-size: 36px;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: #00c8fe;
+  text-align: center;
+  text-shadow: 2px 2px 0px #ffffff;
+}
+
+/*summary style*/
+
+#summaryHeading, #projectsHeading{
+  display: block;
+  text-align: center;
+  background-color: #00c8fe;
+  color: #ffffff;
+  padding: 5px;
+  margin-top: 0px;
+}
+.heading{
+  display: block;
+  text-align: center;
+  background-color: #e7e9e9;
+  color: #000000;
+  padding: 5px;
+  margin-top: 0px;
+}
+
+.navDataSummary p, .projectDesc, .navDataSummary a{
+  padding: 10px;
+}
+
+/*about me page style*/
+
+.aboutMeSummary img{
+  display: block;
+  margin: 0 auto;
+  border: solid 10px;
+  color: #00c8fe;
+  border-radius: 25%;
+  margin-top: 10px;
+  margin-top: 10px;
+}
+.aboutTop, .professionHeading{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 0;
+  text-align: center;
+}
+#aboutMeHeading, .professionHeading{
+  background-color: #e7e9e9;
+}
+.aboutMeSummary p, .experienceItem p, .experienceItem h4{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.experienceItem img{
+  display: block;
+  margin: 0 auto;
+  padding-top: 10px;
+  text-align: center;
+}
+.experienceImages{
+  padding-bottom: 15px;
+  border-bottom: solid 1px;
+}
+
+#experienceImages{
+  max-width: 300px;
+  max-height: 300px;
+  vertical-align: center;
+}
+
+/*projects style*/
+.headerAndNav {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.myProjects {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.projectHeading{
+  text-align: center;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #00c8fe;
+}
+.projectScreeenshots{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.screenshot, .myProjects p, .myProjects h2, .myProjects span{
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.screenshot{
+  border: solid 1px;
+  box-shadow: 4px 4px 0px grey;
+}
+.myProjects a{
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+  text-align: center;
+  color: red;
+  text-decoration: underline;
+}
+/*footer navigation style*/
+
+.footerNav{
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+  margin-left: 20px;
+  color: #ffffff;
+  padding-right: 30px;
+}
+footer a:hover{
+  transform: scale(1.2);
+}
+.footerNavClass{
+  padding-bottom: 30px;
+}
+.footerNavClass a{
+  margin-left: 35px;
+  margin-right: 35px;
+}
+.contactPlatforms, .footerNavClass{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contactPlatforms a{
+  margin: 35px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  transition: transform 0.2s ease-in-out;
+}
+.contactPlatforms img{
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  padding: 8px;
+
+}
+.gitHubInfo{
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 35px;
+}
+#gitHubLink{
+  color: #ffffff;
+  background-color: #00c8fe;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+
+/*copyright style*/
+
+.copyright{
+  height: 80px;
+  color: #000000;
+  background-color: #ffffff;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/*contact me style*/
+
+#contactMeHeading{
+  padding-left: 10px;
+}
+.contactMe{
+  padding-top: 0px;
+  padding-left: 45px;
+  padding-bottom: 35px;
+}
+
+/*MySkills style*/
+
+.skillsData, .skillsLearning {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.skillItem , .skillLearnItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skillItem img , .skillLearnItem img{
+  margin-bottom: 10px;
+}
+.skillsLearning{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.skillLearnItem{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+.skillLearnItem:hover{
+  transform: scale(1.2);
+}
+.mySkillsHeader{
+  background-color: #00c8fe;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #ffffff;
+  text-align: center;
+}
+.learnJavaDiv, .learnHTMLDiv, .learnCSSDiv, .learnJavaScriptDiv, .learnPythonDiv, .learnMySQLDiv, .learnLinuxDiv, .learnOfficeDiv, #clickLinkInstruction{
+  display: none;
+}
+.learnASkill a{
+  color: #00c8fe;
+}
+#clickLinkInstruction{
+  background-color:#e7e9e9;
+  text-align: center;
+}
+.learnASkill{
+  text-align: center;
+  padding: 10px;
+}
+
+/*universal element styles*/
+
+a{
+  text-decoration: none;
+}
+body{
+  padding: 0;
+  margin: 0;
+}
+footer{
+  padding-top: 20px;
+  background-color: #00c8fe;
+  color: #ffffff;
+}
+html{
+  scroll-behavior: smooth;
+}
+/*tablet size*/
+@media only screen and (max-width: 867px) and (min-width: 481px){
+  /*menu style*/
+
+  #menuBar{
+    display: block;
+    position:relative;
+    padding-right: 30px;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+  #menuNavigation{
+    display: block;
+    color: #ffffff;
+    background-color: #d7d7d7;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: right;
+    top: 30px;
+    right: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+  }
+  #menuNavigation.show {
+        opacity: 1;
+        visibility: visible;
+      }
+  #menuNavigation a{
+    color: #000000;
+    text-shadow: none;
+    padding-top: 10px;
+  }
+}
+
+/*mobile phone size*/
+@media only screen and (max-width: 480px) {
+  /*menu style*/
+
+  #menuBar{
+    display: block;
+    position:relative;
+    padding-right: 30px;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+  #menuNavigation{
+    display: block;
+    color: #ffffff;
+    background-color: #d7d7d7;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: right;
+    top: 30px;
+    right: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s;
+  }
+  #menuNavigation.show {
+        opacity: 1;
+        visibility: visible;
+      }
+  #menuNavigation a{
+    color: #000000;
+    text-shadow: none;
+    padding-top: 10px;
+  }
+
+  .heading{
+    margin: 0;
+    text-align: center;
+    background-color: #e7e9e9;
+  }
+  .navDataSummary p, #projectDesc{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .navDataSummary a{
+    padding-left: 15px;
+    color: red;
+  }
+  #summaryHeading, #projectsHeading{
+    background-color: #00c8fe;
+    text-align: center;
+    border-top: solid 1px;
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+  }
+  .skillsData{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .gitHubInfo{
+    background-color: #ffffff;
+    width: 95%;
+    color: #000000;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .gitHubInfo a{
+    background-color: #00c8fe;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 5px;
+  }
+  #nameHeader{
+    margin-left: 20px;
+    color: #00c8fe;
+  }
+
+  /*about me style*/
+  .aboutTop h1{
+
+    border-top: solid #00c8fe;
+  }
+  .aboutMeSummary img{
+    display: block;
+    margin: 0 auto;
+    border: solid 10px;
+    color: #00c8fe;
+    border-radius: 25%;
+    margin-top: 10px;
+    margin-top: 10px;
+  }
+  .aboutTop{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    text-align: center;
+    background-color: #e7e9e9;
+    border-top: solid #00c8fe;
+  }
+  .aboutMeSummary p{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /*projects style*/
+
+  #projectHeading{
+    padding-top: 0px;
+    margin-top: 0px;
+    border-top: solid #00c8fe 1px;
+    background-color:#e7e9e9;
+    text-align: center;
+  }
+  .myProjects p, .myProjects h2, .myProjects span{
+    padding: 10px;
+  }
+  .myProjects a{
+    display: block;
+    margin: 0 auto;
+    color: red;
+    text-align: center;
+    text-decoration: underline;
+  }
+  .myProjects img{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /*experience style*/
+  .experience img{
+    display: block;
+    margin: 0 auto;
+  }
+  .experienceImages{
+    border-bottom: solid 1px;
+    padding-bottom: 10px;
+  }
+  .experience h2{
+    text-align: center;
+    background-color:#e7e9e9;
+    border-top: solid #00c8fe 1px;
+  }
+  .experience h4, .experience p{
+    padding: 10px;
+  }
+
+  /*my skills style*/
+  .skillsData, .skillsLearning {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    justify-items: center;
+  }
+  /*footer style*/
+  .footerNavClass a{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .contactPlatforms a{
+    margin: 15px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+  .gitHubInfo{
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 15px;
+    max-width: 85%;
+  }
+}

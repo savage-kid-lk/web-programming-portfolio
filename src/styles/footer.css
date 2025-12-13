@@ -1,0 +1,198 @@
+/* ===========================
+   FOOTER BASE
+=========================== */
+.footer {
+    background: #0d0d0d;
+    padding: 60px 0 40px 0;
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* TOP STATIC BORDER */
+    border-top: 3px solid #2a2a2a;
+
+    /* TOP RGB SCROLLING BORDER */
+    position: relative;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 100%;
+
+    background: linear-gradient(
+        90deg,
+        #ff0066,
+        #ffcc00,
+        #00eaff,
+        #7a00ff,
+        #ff0066
+    );
+    background-size: 300% 100%;
+    animation: footerRGB 5s linear infinite;
+}
+
+@keyframes footerRGB {
+    0%   { background-position: 100% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* ===========================
+   GITHUB SECTION
+=========================== */
+.my-github h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.my-github p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #d0d0d0;
+}
+
+.github-button {
+    background: #ffffff;
+    color: #000;
+    font-weight: bold;
+    padding: 14px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+.github-button:hover {
+    background: #d6d6d6;
+    transform: translateY(-4px);
+}
+
+/* ===========================
+   SOCIAL ICONS
+=========================== */
+.Social-media {
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    flex-wrap: wrap;
+}
+
+.social-platforms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.social-platforms a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.social-platforms img {
+    width: 75px;
+    height: 75px;
+    filter: brightness(0) invert(1);
+    transition: 0.3s ease;
+}
+
+.social-platforms span {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #cfcfcf;
+}
+
+.social-platforms:hover {
+    transform: translateY(-8px);
+}
+
+.social-platforms:hover img {
+    transform: scale(1.1);
+}
+
+.social-platforms:hover span {
+    color: #ffffff;
+}
+
+/* ===========================
+   FOOTER MENU
+=========================== */
+.footer-menu nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 40px;
+    padding: 0;
+}
+
+.footer-menu nav ul li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 17px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.footer-menu nav ul li a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #ffffff;
+    transition: 0.3s ease;
+}
+
+.footer-menu nav ul li a:hover::after {
+    width: 100%;
+}
+
+.footer-menu nav ul li a:hover {
+    color: #fff;
+}
+
+/* ===========================
+   COPYRIGHT
+=========================== */
+.copyright {
+    margin-top: 40px;
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media screen and (max-width: 600px) {
+
+    .my-github h2 {
+        font-size: 26px;
+    }
+
+    .Social-media {
+        gap: 30px;
+    }
+
+    .social-platforms img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer-menu nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

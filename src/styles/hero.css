@@ -1,0 +1,157 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Base layer styling for all images */
+.hero::before,
+.hero::after,
+.hero .bg3,
+.hero .bg4 {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    animation: fadeLoop 32s infinite;
+}
+
+/* IMAGE 1 */
+.hero::before {
+    background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=820&auto=format&fit=crop');
+    animation-delay: 0s;
+}
+
+/* IMAGE 2 */
+.hero::after {
+    background-image: url('https://plus.unsplash.com/premium_photo-1661286727588-0819750988cc?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    animation-delay: 8s;
+}
+
+/* IMAGE 3 */
+.hero .bg3 {
+    background-image: url('https://plus.unsplash.com/premium_photo-1661835495814-f07d70f2a71e?q=80&w=812&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    animation-delay: 16s;
+}
+
+/* IMAGE 4 */
+.hero .bg4 {
+    background-image: url('https://plus.unsplash.com/premium_photo-1663100722417-6e36673fe0ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNvZGluZ3xlbnwwfDB8MHx8fDA%3D');
+    animation-delay: 24s;
+}
+
+/* Smooth fade cycle */
+@keyframes fadeLoop {
+    0%   { opacity: 1; }
+    20%  { opacity: 1; }
+    25%  { opacity: 0; }
+    95%  { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* ===========================
+   CONTENT STYLING
+=========================== */
+.welcome-section {
+    z-index: 10;
+    text-align: center;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+/* Hero Title */
+.welcome-section h1 {
+    font-size: 5rem;
+    margin-bottom: 25px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #ffffff;
+    display: inline-block;
+    overflow: hidden;
+}
+
+/* Hero Subtitle */
+.welcome-section p {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #ffffffcc;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ===========================
+   TEXT ANIMATIONS
+=========================== */
+.welcome-section h1 span {
+    display: inline-block;
+    transform: translateX(100%);
+    opacity: 0;
+    animation: slideInOut 5s ease-in-out infinite;
+}
+
+/* Stagger letters for smooth one-by-one effect */
+.welcome-section h1 span:nth-child(1)  { animation-delay: 0s; }
+.welcome-section h1 span:nth-child(2)  { animation-delay: 0.15s; }
+.welcome-section h1 span:nth-child(3)  { animation-delay: 0.3s; }
+.welcome-section h1 span:nth-child(4)  { animation-delay: 0.45s; }
+.welcome-section h1 span:nth-child(5)  { animation-delay: 0.6s; }
+.welcome-section h1 span:nth-child(6)  { animation-delay: 0.75s; }
+.welcome-section h1 span:nth-child(7)  { animation-delay: 0.9s; }
+.welcome-section h1 span:nth-child(8)  { animation-delay: 1.05s; }
+.welcome-section h1 span:nth-child(9)  { animation-delay: 1.2s; }
+.welcome-section h1 span:nth-child(10) { animation-delay: 1.35s; }
+.welcome-section h1 span:nth-child(11) { animation-delay: 1.5s; }
+
+/* Slide in from right → stay → slide out left */
+@keyframes slideInOut {
+    0%   { transform: translateX(100%); opacity: 0; }
+    20%  { transform: translateX(0);   opacity: 1; }
+    60%  { transform: translateX(0);   opacity: 1; } /* stays visible */
+    100% { transform: translateX(-100%); opacity: 0; }
+}
+
+/* ===========================
+   RESPONSIVE TEXT
+=========================== */
+@media screen and (max-width: 1200px) {
+    .welcome-section h1 {
+        font-size: 4rem;
+    }
+
+    .welcome-section p {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .welcome-section h1 {
+        font-size: 3rem;
+    }
+
+    .welcome-section p {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .welcome-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .welcome-section p {
+        font-size: 1.2rem;
+    }
+}

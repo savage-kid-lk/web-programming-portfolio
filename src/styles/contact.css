@@ -1,0 +1,150 @@
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  padding: 50px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0e0e0e, #1a1a1a, #111);
+  color: white;
+}
+
+/* CONTACT HEADING */
+.contact-heading {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #d7d7d7;
+  animation: fadeIn 1.3s ease-out;
+}
+
+/* MAIN CONTENT WRAPPER */
+.contact-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px; /* Space between details and animation */
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* LEFT SIDE: DETAILS */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1; /* Takes up equal space */
+  max-width: 500px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.8em;
+  color: #888;
+  margin-bottom: 2px;
+}
+
+/* Icon Container */
+.icon-container {
+  color: #ffffff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.contact-item:hover .icon-container {
+  color: #00eaff;
+}
+
+.contact-item a {
+  color: #00eaff;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* RIGHT SIDE: ANIMATION */
+.decoration-container {
+  flex: 1; /* Takes up equal space */
+  max-width: 500px;
+  height: 500px; /* Force a nice big size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .contact-content {
+    flex-direction: column-reverse; /* Puts animation on top on mobile, or 'column' for bottom */
+    text-align: center;
+  }
+  
+  .contact-details {
+    align-items: center; /* Centers items on mobile */
+  }
+
+  .contact-item {
+    flex-direction: column; /* Stack icon and text on mobile */
+    gap: 10px;
+  }
+  
+  .decoration-container {
+    height: 300px; /* Smaller animation on mobile */
+    width: 100%;
+  }
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Icon Animations */
+.icon-float { animation: float 3s ease-in-out infinite; }
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.icon-shake { animation: shake 4s cubic-bezier(.36,.07,.19,.97) infinite; }
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg); }
+  10%, 30%, 50%, 70%, 90% { transform: rotate(-5deg); }
+  20%, 40%, 60%, 80% { transform: rotate(5deg); }
+}
+
+.icon-bounce { animation: bounce 2s infinite; }
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-10px);}
+  60% {transform: translateY(-5px);}
+}
+
+.icon-pulse { animation: pulse 2s infinite; }
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

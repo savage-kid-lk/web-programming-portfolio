@@ -1,0 +1,54 @@
+.projects-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0e0e0e, #1a1a1a, #111);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+.construction-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  animation: fadeUp 1s ease-out;
+}
+
+/* Wrapper to control the size of the Lottie */
+.lottie-wrapper {
+  width: 300px;
+  height: 300px;
+}
+
+.projects-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #00eaff;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.construction-msg {
+  font-size: 1.5rem;
+  color: #d7d7d7;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}

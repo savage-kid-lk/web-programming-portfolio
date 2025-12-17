@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../styles/contact.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +7,6 @@ import {
   faInstagram, 
   faLinkedin 
 } from "@fortawesome/free-brands-svg-icons";
-// Import the Lottie component
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const Contact = () => {
@@ -49,15 +48,43 @@ const Contact = () => {
     }
   ];
 
+  const observerRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+        } else {
+          // Remove class when out of view for continuous animation
+          if (entry.boundingClientRect.top > 0) {
+            entry.target.classList.remove("in-view");
+          }
+        }
+      });
+    }, { threshold: 0.2, rootMargin: "0px 0px -50px 0px" });
+
+    observerRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="contact-page">
-      <h2 className="contact-heading">CONTACT ME:</h2>
+      <h2 className="contact-heading anim-target" ref={el => observerRefs.current[contacts.length] = el}>
+        CONTACT ME:
+      </h2>
 
       <div className="contact-content">
-        {/* Left Side: Contact Details */}
         <div className="contact-details">
           {contacts.map((c, i) => (
-            <div className="contact-item" key={i}>
+            <div 
+              className="contact-item anim-target" 
+              key={i} 
+              ref={el => observerRefs.current[i] = el}
+            >
               <div className={`icon-container ${c.anim}`}>
                 <FontAwesomeIcon icon={c.icon} size="2x" />
               </div>
@@ -69,8 +96,7 @@ const Contact = () => {
           ))}
         </div>
 
-        {/* Right Side: Decoration Animation */}
-        <div className="decoration-container">
+        <div className="decoration-container anim-target" ref={el => observerRefs.current[contacts.length + 1] = el}>
           <DotLottieReact
             src="https://lottie.host/492e3089-628c-40e6-9d29-c6e32797c1f8/YIvn1muLGi.lottie"
             loop

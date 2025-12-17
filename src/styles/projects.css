@@ -1,54 +1,245 @@
+/* =========================================
+   PROJECTS PAGE WRAPPER
+   ========================================= */
 .projects-page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #0e0e0e, #1a1a1a, #111);
-  color: white;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 20px;
+    min-height: 100vh;
+    background: #050505;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 100px 15px 80px 15px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: clip;
+    perspective: 1500px;
 }
 
-.construction-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 20px;
-  animation: fadeUp 1s ease-out;
+/* GALAXY BACKGROUND */
+.galaxy-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 150%; height: 150%;
+    background-image: 
+        radial-gradient(3px 3px at 50px 100px, #ffffff, transparent),
+        radial-gradient(2px 2px at 200px 400px, #ffffff, transparent),
+        radial-gradient(4px 4px at 400px 200px, #ffffff, transparent);
+    background-size: 500px 500px;
+    opacity: 0.15;
+    animation: galaxyDrift 40s linear infinite;
+    pointer-events: none;
+    z-index: 0;
 }
 
-/* Wrapper to control the size of the Lottie */
-.lottie-wrapper {
-  width: 300px;
-  height: 300px;
+@keyframes galaxyDrift {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-15%, -15%); }
 }
 
-.projects-title {
-  font-size: 3rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  color: #00eaff;
-  margin: 0;
-  letter-spacing: 2px;
+/* =========================================
+   HEADER SECTION
+   ========================================= */
+.projects-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 5;
+    transform: translateY(50px) rotateX(-20deg);
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.construction-msg {
-  font-size: 1.5rem;
-  color: #d7d7d7;
-  font-weight: 300;
-  margin: 0;
+.projects-header.in-view {
+    transform: translateY(0) rotateX(0deg);
+    opacity: 1;
 }
 
-/* Animation */
-@keyframes fadeUp {
-  from { 
-    opacity: 0; 
-    transform: translateY(30px); 
-  }
-  to { 
-    opacity: 1; 
-    transform: translateY(0); 
-  }
+.main-title {
+    font-size: clamp(2.2rem, 8vw, 4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    background: linear-gradient(to right, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.highlight {
+    color: #00eaff;
+    background: linear-gradient(to right, #00eaff, #008cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* =========================================
+   PROJECT CONTAINER & CARDS
+   ========================================= */
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    position: relative;
+    z-index: 5;
+}
+
+.project-section {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    transform: scale(0.85) rotateX(-25deg);
+    opacity: 0;
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.project-section.in-view {
+    transform: scale(1) rotateX(0deg);
+    opacity: 1;
+}
+
+/* =========================================
+   VISUALS
+   ========================================= */
+.project-visuals {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+    position: relative;
+    width: 100%;
+}
+
+.mobile-frame {
+    width: 25%;
+    max-width: 140px;
+    aspect-ratio: 9 / 19;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.8);
+    border: 3px solid #222;
+    background: #000;
+    z-index: 2;
+}
+
+.desktop-frame {
+    flex-grow: 1;
+    aspect-ratio: 16 / 10;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+    border: 6px solid #222;
+    border-bottom-width: 14px;
+    background: #000;
+    z-index: 1;
+}
+
+.mobile-frame img, .desktop-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================================
+   CONTENT STYLING
+   ========================================= */
+.project-name {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-tag {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-desc {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+.project-links {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-live { background: #fff; color: #000; }
+.btn-code { background: transparent; border: 2px solid #444; color: #fff; }
+
+/* =========================================
+   MOBILE RESPONSIVE FIXES
+   ========================================= */
+@media (max-width: 1024px) {
+    .project-section {
+        grid-template-columns: 1fr;
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .project-visuals { justify-content: center; }
+    .tech-tags, .project-links { justify-content: center; }
+}
+
+@media (max-width: 600px) {
+    .projects-page { padding-top: 90px; }
+    
+    .project-section { 
+        gap: 25px; 
+        padding: 25px 15px; /* Added internal padding to keep content away from borders */
+    }
+
+    .mobile-frame { width: 80px; } 
+    
+    .project-links {
+        flex-direction: column; 
+        align-items: center; /* Center buttons */
+        gap: 12px;
+    }
+
+    .btn {
+        width: 85%; /* Reduced width to prevent section overlap */
+        max-width: 250px; /* Safety cap for larger mobile screens */
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
 }

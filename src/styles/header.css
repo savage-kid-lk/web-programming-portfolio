@@ -1,55 +1,44 @@
+/* ============================
+    HEADER CORE
+============================ */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 70px;
-    height: 70px;
-    /*background-color: darkgrey;*/
-    background-image: url('https://images.unsplash.com/photo-1650301545472-b3113cb014e4?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: contain;
+    padding: 0 0 0 50px;
+    background: #050505;
+    background-image: url('https://images.unsplash.com/photo-1650301545472-b3113cb014e4?q=80&w=870&auto=format&fit=crop');
+    background-size: cover;
     background-position: center;
     color: white;
-    z-index: 1000;
+    z-index: 2000;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    overflow: hidden;
 }
 
-/* ============================
-   SCROLLING RGB LED BORDER
-============================ */
-.header::after {
-    content: "";
+/* RGB LED BORDER */
+.led-line-rgb {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(
-        90deg,
-        red,
-        orange,
-        yellow,
-        lime,
-        cyan,
-        blue,
-        purple,
-        red
-    );
+    background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, purple, red);
     background-size: 300% 100%;
-    animation: ledScroll 3s linear infinite;
+    animation: ledScrollRGB 3s linear infinite;
 }
 
-@keyframes ledScroll {
+@keyframes ledScrollRGB {
     0%   { background-position: 100% 0; }
     100% { background-position: 0 0; }
 }
 
 /* ============================
-   NAME STYLING
+    NAME ANIMATION
 ============================ */
 .my-name h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -57,58 +46,35 @@
     font-size: 1.8rem;
     display: flex;
     gap: 2px;
-    overflow: hidden;
 }
 
-/* Animate each letter individually */
 .my-name h1 span {
     display: inline-block;
     transform: translateX(100%);
     opacity: 0;
-    animation: slideInOut 4s ease-in-out infinite;
+    animation: slideInOutOriginal 4s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.1s);
+    text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 10px rgba(255,255,255,0.3);
 }
 
-/* Stagger letters for smooth one-by-one effect */
-.my-name h1 span:nth-child(1)  { animation-delay: 0s; }
-.my-name h1 span:nth-child(2)  { animation-delay: 0.1s; }
-.my-name h1 span:nth-child(3)  { animation-delay: 0.2s; }
-.my-name h1 span:nth-child(4)  { animation-delay: 0.3s; }
-.my-name h1 span:nth-child(5)  { animation-delay: 0.4s; }
-.my-name h1 span:nth-child(6)  { animation-delay: 0.5s; }
-.my-name h1 span:nth-child(7)  { animation-delay: 0.6s; }
-.my-name h1 span:nth-child(8)  { animation-delay: 0.7s; }
-.my-name h1 span:nth-child(9)  { animation-delay: 0.8s; }
-.my-name h1 span:nth-child(10) { animation-delay: 0.9s; }
-.my-name h1 span:nth-child(11) { animation-delay: 1s; } /* extra letter spacing */
-
-/* Slide in from right → pause → slide out left */
-@keyframes slideInOut {
+@keyframes slideInOutOriginal {
     0%   { transform: translateX(100%); opacity: 0; }
     20%  { transform: translateX(0);   opacity: 1; }
-    60%  { transform: translateX(0);   opacity: 1; } /* stays visible longer */
+    60%  { transform: translateX(0);   opacity: 1; } 
     100% { transform: translateX(-100%); opacity: 0; }
 }
 
-/* Text glow effect for letters */
-.my-name h1 span {
-    text-shadow:
-        0 0 5px rgba(255,255,255,0.5),
-        0 0 10px rgba(255,255,255,0.3),
-        0 0 20px rgba(0,0,0,0.5);
+/* ============================
+    DESKTOP NAVIGATION
+============================ */
+.menu { 
+    padding-right: 70px; 
 }
 
-/* ============================
-   MENU STYLING
-============================ */
-.menu{
-    margin-right: 10%;
-}
 .menu ul {
-    list-style: none;
     display: flex;
+    list-style: none;
     gap: 25px;
-    margin: 0;
-    padding: 0;
 }
 
 .menu ul li a {
@@ -118,9 +84,21 @@
     font-weight: bold;
     font-size: 1rem;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
-/* Hover effect: underline and subtle glow */
+/* DESKTOP HOVER ANIMATIONS */
+.menu ul li a::before {
+    content: "•";
+    color: white;
+    margin-right: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu ul li a:hover::before { opacity: 1; }
+
 .menu ul li a::after {
     content: "";
     position: absolute;
@@ -130,49 +108,119 @@
     height: 2px;
     background: white;
     transition: 0.3s ease;
-    border-radius: 2px;
 }
 
-.menu ul li a:hover::after {
-    width: 100%;
-    animation: slideBorder 2s linear infinite;
-}
+.menu ul li a:hover::after { width: 100%; }
 
-@keyframes slideBorder {
-    0% { background-position: 0 0; }
-    100% { background-position: 200% 0; }
-}
-
-.menu ul li a:hover {
-    color: #fff;
-    text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 20px rgba(0,0,0,0.5);
+/* ICONS - STRICTLY MOBILE ONLY */
+.mobile-icon { 
+    display: none; 
 }
 
 /* ============================
-   RESPONSIVE TOUCH UPS
+    HAMBURGER BUTTON
+============================ */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 35px;
+    height: 28px;
+    cursor: pointer;
+    z-index: 3000;
+    margin-right: 70px;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    transition: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.hamburger.active span { background: #ff0000; }
+.hamburger.active span:nth-child(1) { transform: translateY(10px) rotate(225deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; transform: scale(0); }
+.hamburger.active span:nth-child(3) { transform: translateY(-10px) rotate(-225deg); }
+
+/* ============================
+    MOBILE RESPONSIVE
 ============================ */
 @media screen and (max-width: 900px) {
-    .header {
-        padding: 0 30px;
-        flex-direction: column;
-        height: auto;
+    .hamburger { display: flex; }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%; /* NARROWER WIDTH */
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.98);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.6s cubic-bezier(1, 0, 0, 1), visibility 0.6s;
+        z-index: 1050;
+        visibility: hidden;
+        pointer-events: none;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
     }
 
-    .menu ul {
-        flex-direction: column;
-        gap: 15px;
-        margin-top: 10px;
+    .menu.active { 
+        right: 0; 
+        visibility: visible; 
+        pointer-events: auto; 
     }
+
+    .menu::before {
+        content: "";
+        position: absolute;
+        width: 300%; height: 300%;
+        background-image: 
+            radial-gradient(4px 4px at 20px 50px, #fff, transparent),
+            radial-gradient(6px 6px at 200px 300px, #fff, transparent),
+            radial-gradient(5px 5px at 150px 100px, #fff, transparent);
+        background-size: 400px 400px;
+        opacity: 0.8;
+        animation: hyperSpace 25s linear infinite;
+    }
+
+    .menu ul { 
+        flex-direction: column; 
+        align-items: flex-start; /* STRAIGHT ALIGNMENT */
+        gap: 40px; 
+        z-index: 10;
+        padding-left: 20%;
+    }
+
+    .menu ul li {
+        opacity: 0; transform: scale(0);
+        transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .menu.active ul li { 
+        opacity: 1; transform: scale(1); 
+        transition-delay: calc(var(--i) * 0.1s); 
+    }
+
+    .menu ul li a { 
+        font-size: 1.8rem; 
+        gap: 20px; 
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .mobile-icon { 
+        display: flex; /* RE-ENABLED ONLY HERE */
+        color: white; 
+    }
+    
+    /* REMOVE DESKTOP DOTS/LINES ON MOBILE */
+    .menu ul li a::after, .menu ul li a::before { display: none; }
 }
 
-.menu ul li a::before {
-    content: "•";
-    color: white;
-    margin-right: 5px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.menu ul li a:hover::before {
-    opacity: 1;
+@keyframes hyperSpace {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-30%, -30%); }
 }

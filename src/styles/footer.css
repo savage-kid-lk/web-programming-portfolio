@@ -1,20 +1,18 @@
 /* ===========================
-   FOOTER BASE
+    FOOTER BASE
 =========================== */
 .footer {
-    background: #0d0d0d;
-    padding: 60px 0 40px 0;
+    background: #050505;
+    padding: 80px 5% 40px 5%;
     color: #ffffff;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-    /* TOP STATIC BORDER */
-    border-top: 3px solid #2a2a2a;
-
-    /* TOP RGB SCROLLING BORDER */
     position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* RGB TOP BORDER - Sync'd with Header */
 .footer::before {
     content: "";
     position: absolute;
@@ -22,17 +20,10 @@
     left: 0;
     height: 5px;
     width: 100%;
-
-    background: linear-gradient(
-        90deg,
-        #ff0066,
-        #ffcc00,
-        #00eaff,
-        #7a00ff,
-        #ff0066
-    );
+    background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, purple, red);
     background-size: 300% 100%;
-    animation: footerRGB 5s linear infinite;
+    animation: footerRGB 3s linear infinite;
+    z-index: 10;
 }
 
 @keyframes footerRGB {
@@ -40,159 +31,195 @@
     100% { background-position: 0 0; }
 }
 
-/* ===========================
-   GITHUB SECTION
-=========================== */
-.my-github h2 {
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+/* STAR FIELD OVERLAY (Visible on hover/mobile) */
+.footer-stars-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: 
+        radial-gradient(2px 2px at 40px 60px, #fff, transparent),
+        radial-gradient(3px 3px at 100px 150px, #fff, transparent),
+        radial-gradient(2px 2px at 200px 300px, #fff, transparent);
+    background-size: 300px 300px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
 }
 
-.my-github p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #d0d0d0;
+.footer:hover .footer-stars-overlay {
+    opacity: 0.3;
+    animation: footerSpaceShift 40s linear infinite;
+}
+
+@keyframes footerSpaceShift {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-20%, -20%); }
+}
+
+/* ===========================
+    GITHUB SECTION
+========================== */
+.my-github {
+    position: relative;
+    z-index: 5;
+}
+
+.my-github h2 {
+    font-size: clamp(24px, 5vw, 36px);
+    font-weight: 900;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(255,255,255,0.2);
 }
 
 .github-button {
     background: #ffffff;
     color: #000;
-    font-weight: bold;
-    padding: 14px 30px;
-    border-radius: 10px;
+    font-weight: 900;
+    padding: 16px 40px;
+    border-radius: 50px;
     border: none;
     cursor: pointer;
     font-size: 16px;
-    transition: 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 0 0 rgba(255,255,255,0);
 }
 
 .github-button:hover {
-    background: #d6d6d6;
-    transform: translateY(-4px);
+    transform: translateY(-5px) scale(1.05);
+    background: #ffffff;
+    box-shadow: 0 0 30px rgba(255,255,255,0.6);
 }
 
 /* ===========================
-   SOCIAL ICONS
+    SOCIAL ICONS
 =========================== */
 .Social-media {
-    margin: 50px auto;
+    margin: 60px auto;
     display: flex;
     justify-content: center;
-    gap: 45px;
+    gap: 50px;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 5;
 }
 
 .social-platforms {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: 0.3s ease;
-    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: footerItemFade 0.8s ease forwards;
+    animation-delay: calc(var(--i) * 0.2s);
 }
 
-.social-platforms a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
+@keyframes footerItemFade {
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .social-platforms img {
-    width: 75px;
-    height: 75px;
+    width: 70px;
+    height: 70px;
     filter: brightness(0) invert(1);
-    transition: 0.3s ease;
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .social-platforms span {
-    margin-top: 8px;
-    font-size: 15px;
-    color: #cfcfcf;
-}
-
-.social-platforms:hover {
-    transform: translateY(-8px);
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #888;
+    transition: 0.3s;
 }
 
 .social-platforms:hover img {
-    transform: scale(1.1);
+    transform: rotate(360deg) scale(1.2);
+    filter: brightness(1) invert(0) drop-shadow(0 0 10px #00eaff);
 }
 
 .social-platforms:hover span {
     color: #ffffff;
+    text-shadow: 0 0 10px #ffffff;
 }
 
 /* ===========================
-   FOOTER MENU
+    FOOTER MENU
 =========================== */
 .footer-menu nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 35px;
-    margin-top: 40px;
+    gap: 40px;
+    margin-top: 50px;
     padding: 0;
 }
 
 .footer-menu nav ul li a {
     text-decoration: none;
-    color: #e0e0e0;
-    font-size: 17px;
-    font-weight: 600;
-    transition: 0.3s ease;
-    position: relative;
-}
-
-.footer-menu nav ul li a::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background: #ffffff;
-    transition: 0.3s ease;
-}
-
-.footer-menu nav ul li a:hover::after {
-    width: 100%;
+    color: #666;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.4s;
 }
 
 .footer-menu nav ul li a:hover {
     color: #fff;
+    letter-spacing: 4px;
 }
 
 /* ===========================
-   COPYRIGHT
+    COPYRIGHT
 =========================== */
 .copyright {
-    margin-top: 40px;
-    color: #aaaaaa;
-    font-size: 14px;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: #444;
+    font-size: 12px;
+    letter-spacing: 1px;
 }
 
 /* ===========================
-   RESPONSIVE
+    RESPONSIVE (MOBILE)
 =========================== */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 60px 20px 30px 20px;
+    }
+
+    /* Keep stars always visible on mobile for "Active" feel */
+    .footer-stars-overlay {
+        opacity: 0.25;
+        animation: footerSpaceShift 20s linear infinite;
+    }
 
     .my-github h2 {
-        font-size: 26px;
+        font-size: 28px;
     }
 
     .Social-media {
         gap: 30px;
+        margin: 40px auto;
     }
 
     .social-platforms img {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
     }
 
     .footer-menu nav ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .footer-menu nav ul li a {
+        font-size: 18px;
     }
 }

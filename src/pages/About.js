@@ -8,128 +8,89 @@ const About = () => {
             icon: "https://ienabler.tut.ac.za/itsimages/InsImg.gif",
             title: "Tutor – Tshwane University of Technology",
             date: "Aug 2025 – Oct 2025",
-            tasks: [
-                "Tutored students in Computer Science modules",
-                "Assisted during night-study programming labs",
-                "Helped students understand advanced coding logic"
-            ],
-            animatedIcon: {
-                src: "https://animatedicons.co/get-icon?name=CLP&style=minimalistic&token=443f928c-fed5-4d77-8d8a-debd2b9c67a2",
-                variationColors: { "group-1": "#000000", "group-2": "#000000", "background": "#FFFFFF" }
-            }
+            tasks: ["Tutored students in CS", "Assisted in labs", "Explained coding logic"],
+            animIcon: "https://animatedicons.co/get-icon?name=CLP&style=minimalistic&token=443f928c-fed5-4d77-8d8a-debd2b9c67a2"
         },
         {
             icon: "https://ienabler.tut.ac.za/itsimages/InsImg.gif",
             title: "Registration Student Assistant – TUT",
             date: "Jan 2025 – Feb 2025",
-            tasks: [
-                "Assisted students with manual & online registration",
-                "Managed queues during peak registration periods",
-                "Verified and printed registration documents"
-            ],
-            animatedIcon: {
-                src: "https://animatedicons.co/get-icon?name=Register&style=minimalistic&token=443f928c-fed5-4d77-8d8a-debd2b9c67a2",
-                variationColors: { "group-1": "#000000", "group-2": "#000000", "background": "#FFFFFF" }
-            }
+            tasks: ["Manual & online registration", "Queue management", "Document verification"],
+            animIcon: "https://animatedicons.co/get-icon?name=Register&style=minimalistic&token=443f928c-fed5-4d77-8d8a-debd2b9c67a2"
         },
         {
             icon: "https://ienabler.tut.ac.za/itsimages/InsImg.gif",
             title: "Computer Science Mentor – TUT",
             date: "Feb 2024 – Nov 2024",
-            tasks: [
-                "Mentored first-year students across ICT modules",
-                "Provided academic and administrative support",
-                "Helped coordinate the ICT Studython event"
-            ],
-            animatedIcon: {
-                src: "https://animatedicons.co/get-icon?name=Classroom&style=minimalistic&token=e3e4aedc-82e9-4ec3-8751-ecde2860c32f",
-                variationColors: { "group-1": "#000000", "group-2": "#000000", "background": "#FFFFFF" }
-            }
+            tasks: ["Mentored 1st years", "Academic support", "Studython coordination"],
+            animIcon: "https://animatedicons.co/get-icon?name=Classroom&style=minimalistic&token=e3e4aedc-82e9-4ec3-8751-ecde2860c32f"
         },
         {
             icon: "https://tse3.mm.bing.net/th/id/OIP.H2l9T06XgugPWUS5xWG1VwHaGL?rs=1&pid=ImgDetMain&o=7&rm=3",
-            title: "General Worker – Meatrite, Modimolle",
+            title: "General Worker – Meatrite",
             date: "Feb 2022 – Feb 2023",
-            tasks: [
-                "Operated food-processing machinery responsibly",
-                "Sorted and verified product classifications",
-                "Worked efficiently under strict conditions"
-            ],
-            animatedIcon: {
-                src: "https://animatedicons.co/get-icon?name=Staff&style=minimalistic&token=ae89d06d-f628-4b1b-a043-ad9291637752",
-                variationColors: { "group-1": "#000000", "group-2": "#000000", "background": "#FFFFFF" }
-            }
+            tasks: ["Machinery operation", "Product classification", "Efficiency under pressure"],
+            animIcon: "https://animatedicons.co/get-icon?name=Staff&style=minimalistic&token=ae89d06d-f628-4b1b-a043-ad9291637752"
         }
     ];
 
-    const iconRefs = useRef([]);
-    iconRefs.current = experiences.map((_, i) => iconRefs.current[i] ?? React.createRef());
+    const cardRefs = useRef([]);
 
     useEffect(() => {
-        // Load the animated-icons script
+        // Continuous Scroll Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in-view");
+                } else {
+                    entry.target.classList.remove("in-view");
+                }
+            });
+        }, { threshold: 0.3, rootMargin: "-10% 0px -10% 0px" });
+
+        cardRefs.current.forEach(ref => { if(ref) observer.observe(ref); });
+
+        // Load Animated Icons Script
         const script = document.createElement("script");
         script.src = "https://animatedicons.co/scripts/embed-animated-icons.js";
         script.async = true;
         document.body.appendChild(script);
 
-        // Set attributes on each animated icon
-        iconRefs.current.forEach((ref, i) => {
-            if (ref.current) {
-                ref.current.setAttribute(
-                    "attributes",
-                    JSON.stringify({
-                        variationThumbColour: "#00ffff",
-                        variationName: "Two Tone",
-                        variationNumber: 2,
-                        numberOfGroups: 2,
-                        backgroundIsGroup: false,
-                        strokeWidth: 1,
-                        defaultColours: experiences[i].animatedIcon.variationColors
-                    })
-                );
-            }
-        });
-
-        return () => document.body.removeChild(script);
+        return () => {
+            observer.disconnect();
+            document.body.removeChild(script);
+        };
     }, []);
 
     return (
         <div className="about-page">
-            {/* HERO SECTION */}
-            <section className="about-hero">
+            <div className="galaxy-overlay"></div>
+            
+            <section className="about-hero anim-target" ref={el => cardRefs.current[experiences.length] = el}>
                 <div className="about-heading">
-                    <img src={profilePic} className="about-hero-icon" />
+                    <img src={profilePic} className="about-hero-icon" alt="Profile" />
                     <h1 className="about-title">About <br /> Me</h1>
                 </div>
                 <p className="about-intro">
-                    I am a passionate <b>Computer Science student</b> at Tshwane University of Technology.
+                    I am a passionate <b>Computer Science student</b> at TUT.
                     I thrive in environments where innovation, logic, and creativity merge.
-                    With strong communication, leadership, and mentoring abilities,
                     I excel at breaking down complex concepts and building smart solutions.
                 </p>
             </section>
 
-            {/* EXPERIENCE */}
             <section className="experience-section">
                 <h2 className="section-heading">Professional Experience</h2>
                 {experiences.map((exp, i) => (
-                    <div className="experience-card" key={i}>
-                        <img src={exp.icon} className="card-icon" />
+                    <div className="experience-card anim-target" key={i} ref={el => cardRefs.current[i] = el}>
+                        <div className="card-border-line"></div>
+                        <img src={exp.icon} className="card-icon" alt="icon" />
                         <div className="exp-content">
                             <h3>{exp.title}</h3>
                             <span className="exp-date">{exp.date}</span>
-                            <ul>
-                                {exp.tasks.map((t, j) => <li key={j}>{t}</li>)}
-                            </ul>
+                            <ul>{exp.tasks.map((t, j) => <li key={j}>{t}</li>)}</ul>
                         </div>
                         <div className="exp-animated-icon">
-                            <animated-icons
-                                ref={iconRefs.current[i]}
-                                src={exp.animatedIcon.src}
-                                trigger="loop"
-                                height="200"
-                                width="200"
-                            />
+                            <animated-icons src={exp.animIcon} trigger="loop" height="150" width="150" />
                         </div>
                     </div>
                 ))}

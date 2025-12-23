@@ -1,23 +1,19 @@
-/* ============================
-    HOME PAGE WRAPPER
-============================ */
 .home-page {
-    padding: 100px 0 20px 0; /* Tightened bottom padding */
+    padding: 100px 0 20px 0; 
     min-height: 100vh;
     background: #050505;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     position: relative;
-    overflow-x: hidden; /* Critical: Stops stars from stretching page width */
-    overflow-y: clip;   /* Critical: Stops stars from stretching page height */
+    overflow-x: hidden;
+    overflow-y: clip; 
     perspective: 1200px;
 }
 
-/* GALAXY BACKGROUND - FIXED OVERFLOW */
 .home-page::after {
     content: "";
     position: absolute;
-    width: 150%; height: 150%; /* Reduced from 300% to stop dead space */
+    width: 150%; height: 150%;
     top: -25%; left: -25%;
     background-image: 
         radial-gradient(3px 3px at 50px 100px, #ffffff, transparent),
@@ -35,9 +31,6 @@
     to { transform: translate(-15%, -15%); }
 }
 
-/* ============================
-    TITLES
-============================ */
 .summary-title, .skills-title {
     text-align: center;
     font-size: clamp(30px, 6vw, 48px);
@@ -50,9 +43,7 @@
     position: relative;
 }
 
-/* ============================
-    ABOUT SUMMARY (CLEAN & CENTERED)
-============================ */
+/* ABOUT SUMMARY */
 .about-summary-wrapper {
     display: flex;
     justify-content: center;
@@ -68,7 +59,7 @@
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transform: translateY(50px) rotateX(-15deg); /* Softer initial angle */
+    transform: translateY(50px) rotateX(-15deg);
     opacity: 0;
     transition: all 0.7s cubic-bezier(0.2, 1, 0.3, 1);
 }
@@ -78,9 +69,7 @@
     opacity: 1;
 }
 
-/* ============================
-    SKILLS GRID
-============================ */
+/* SKILLS GRID*/
 .skills-summary {
     width: 90%;
     max-width: 1000px;
@@ -113,9 +102,7 @@
     margin-bottom: 15px;
 }
 
-/* ============================
-    RESPONSIVE
-============================ */
+/* RESPONSIVE*/
 @media screen and (max-width: 768px) {
     .skills-summary {
         grid-template-columns: repeat(2, 1fr);

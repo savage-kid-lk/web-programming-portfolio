@@ -19,8 +19,8 @@ const Home = () => {
 
     useEffect(() => {
         const observerOptions = {
-            threshold: 0.2, // Trigger earlier so it doesn't feel "stuck"
-            rootMargin: "0px 0px -50px 0px" 
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -28,7 +28,6 @@ const Home = () => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('in-view');
                 } else {
-                    // Only remove if it's well out of view to prevent flickering
                     if (entry.boundingClientRect.top > 0) {
                         entry.target.classList.remove('in-view');
                     }
@@ -51,9 +50,11 @@ const Home = () => {
                 <div className="about-summary" ref={(el) => cardRefs.current[skills.length] = el}>
                     <h1>About Me</h1>
                     <p>
-                        As a highly motivated and ambitious computer science graduate at Tshwane 
-                        University of Technology, I possess a unique blend of technical expertise 
-                        and soft skills that enable me to drive innovation and deliver results.
+                        As a motivated and reliable individual, I combine strong <b>problem-solving skills</b> with a
+                        <b>team-oriented mindset</b>. I possess excellent <b>interpersonal and communication skills</b>
+                        developed through diverse roles, including my time as a <b>Tutor</b>.
+                        I am eager to apply my technical expertise in a professional environment where I can add value
+                        through hard work, dedication, and a continuous willingness to learn.
                     </p>
                 </div>
             </div>
@@ -62,9 +63,9 @@ const Home = () => {
 
             <div className="skills-summary">
                 {skills.map((skill, i) => (
-                    <div 
-                        className="skill-item" 
-                        key={i} 
+                    <div
+                        className="skill-item"
+                        key={i}
                         ref={(el) => (cardRefs.current[i] = el)}
                     >
                         <div className="skill-content">

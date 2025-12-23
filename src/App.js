@@ -9,7 +9,6 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Projects from './pages/Projects';
 
-// internal scroll utility
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {

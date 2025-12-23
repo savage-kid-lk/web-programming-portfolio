@@ -1,6 +1,3 @@
-/* ===========================
-    FOOTER BASE
-=========================== */
 .footer {
     background: #050505;
     padding: 80px 5% 40px 5%;
@@ -12,7 +9,11 @@
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* RGB TOP BORDER - Sync'd with Header */
+a {
+    text-decoration: none;
+}
+
+/* RGB TOP BORDER */
 .footer::before {
     content: "";
     position: absolute;
@@ -27,18 +28,22 @@
 }
 
 @keyframes footerRGB {
-    0%   { background-position: 100% 0; }
-    100% { background-position: 0 0; }
+    0% {
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
 }
 
-/* STAR FIELD OVERLAY (Visible on hover/mobile) */
 .footer-stars-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 200%;
     height: 200%;
-    background-image: 
+    background-image:
         radial-gradient(2px 2px at 40px 60px, #fff, transparent),
         radial-gradient(3px 3px at 100px 150px, #fff, transparent),
         radial-gradient(2px 2px at 200px 300px, #fff, transparent);
@@ -54,13 +59,16 @@
 }
 
 @keyframes footerSpaceShift {
-    from { transform: translate(0, 0); }
-    to { transform: translate(-20%, -20%); }
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-20%, -20%);
+    }
 }
 
-/* ===========================
-    GITHUB SECTION
-========================== */
+/*GITHUB SECTION*/
 .my-github {
     position: relative;
     z-index: 5;
@@ -71,7 +79,7 @@
     font-weight: 900;
     margin-bottom: 15px;
     letter-spacing: 2px;
-    text-shadow: 0 0 15px rgba(255,255,255,0.2);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 .github-button {
@@ -86,18 +94,16 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 0 0 rgba(255,255,255,0);
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
 }
 
 .github-button:hover {
     transform: translateY(-5px) scale(1.05);
     background: #ffffff;
-    box-shadow: 0 0 30px rgba(255,255,255,0.6);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
 }
 
-/* ===========================
-    SOCIAL ICONS
-=========================== */
+/* SOCIAL ICONS*/
 .Social-media {
     margin: 60px auto;
     display: flex;
@@ -116,7 +122,10 @@
 }
 
 @keyframes footerItemFade {
-    to { opacity: 1; transform: translateY(0); }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .social-platforms img {
@@ -146,9 +155,7 @@
     text-shadow: 0 0 10px #ffffff;
 }
 
-/* ===========================
-    FOOTER MENU
-=========================== */
+/* FOOTER MENU */
 .footer-menu nav ul {
     list-style: none;
     display: flex;
@@ -173,27 +180,21 @@
     letter-spacing: 4px;
 }
 
-/* ===========================
-    COPYRIGHT
-=========================== */
 .copyright {
     margin-top: 60px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: #444;
     font-size: 12px;
     letter-spacing: 1px;
 }
 
-/* ===========================
-    RESPONSIVE (MOBILE)
-=========================== */
+/* RESPONSIVENESS */
 @media screen and (max-width: 768px) {
     .footer {
         padding: 60px 20px 30px 20px;
     }
 
-    /* Keep stars always visible on mobile for "Active" feel */
     .footer-stars-overlay {
         opacity: 0.25;
         animation: footerSpaceShift 20s linear infinite;

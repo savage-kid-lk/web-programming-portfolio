@@ -37,7 +37,6 @@ const About = () => {
     const cardRefs = useRef([]);
 
     useEffect(() => {
-        // Continuous Scroll Observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -48,9 +47,8 @@ const About = () => {
             });
         }, { threshold: 0.3, rootMargin: "-10% 0px -10% 0px" });
 
-        cardRefs.current.forEach(ref => { if(ref) observer.observe(ref); });
+        cardRefs.current.forEach(ref => { if (ref) observer.observe(ref); });
 
-        // Load Animated Icons Script
         const script = document.createElement("script");
         script.src = "https://animatedicons.co/scripts/embed-animated-icons.js";
         script.async = true;
@@ -65,16 +63,28 @@ const About = () => {
     return (
         <div className="about-page">
             <div className="galaxy-overlay"></div>
-            
+
             <section className="about-hero anim-target" ref={el => cardRefs.current[experiences.length] = el}>
                 <div className="about-heading">
                     <img src={profilePic} className="about-hero-icon" alt="Profile" />
                     <h1 className="about-title">About <br /> Me</h1>
                 </div>
-                <p className="about-intro">
-                    I am a passionate <b>Computer Science student</b> at TUT.
-                    I thrive in environments where innovation, logic, and creativity merge.
-                    I excel at breaking down complex concepts and building smart solutions.
+                <h1>About Me</h1>
+                <p>
+                    I am a passionate <b>Computer Science Graduate</b> at <b>Tshwane University of Technology</b>,
+                    where I have consistently excelled with distinctions in technical cores like <b>Database Principles,
+                        Advanced Object-Oriented Programming, and Operating Systems</b>. Beyond code, I am a proactive leader,
+                    serving as the <b>House Committee Chairperson</b> and a <b>Student Mentor</b>—roles that have sharpened
+                    my <b>Leadership</b> and organizational abilities. My experience as a <b>Tutor</b> and <b>Peer Facilitator </b>
+                     demonstrates my ability to break down complex logic, while my practical work in <b>Web and Mobile Computing</b>
+                    fuels my drive to build innovative solutions.
+                </p>
+                <p>
+                    As a motivated and reliable individual, I combine these technical strengths with a <b>team-oriented mindset</b>
+                    and strong <b>problem-solving skills</b>. My diverse background, including time as a <b>Registration Assistant</b>,
+                    has equipped me with excellent interpersonal and communication skills. I am eager to apply my expertise
+                    in a professional environment where I can add value through hard work, dedication, and a continuous
+                    willingness to learn.
                 </p>
             </section>
 

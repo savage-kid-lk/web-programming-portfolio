@@ -10,10 +10,26 @@ const Header = () => {
     const closeMenu = () => setIsOpen(false);
 
     const navLinks = [
-        { name: "Home", path: "/", icon: <Home size={28} /> },
-        { name: "About", path: "/About", icon: <User size={28} /> },
-        { name: "Projects", path: "/Projects", icon: <Briefcase size={28} /> },
-        { name: "Contact", path: "/Contact", icon: <Mail size={28} /> },
+        {
+            name: "Home",
+            path: "/",
+            icon: <Home size={28} />
+        },
+        {
+            name: "About",
+            path: "/About",
+            icon: <User size={28} />
+        },
+        {
+            name: "Projects",
+            path: "/Projects",
+            icon: <Briefcase size={28} />
+        },
+        {
+            name: "Contact",
+            path: "/Contact",
+            icon: <Mail size={28} />
+        },
     ];
 
     return (
@@ -47,7 +63,7 @@ const Header = () => {
                         ))}
                     </ul>
                 </nav>
-                
+
                 <div className="led-line-rgb"></div>
             </header>
         </div>

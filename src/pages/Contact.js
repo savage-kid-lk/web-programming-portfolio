@@ -56,7 +56,6 @@ const Contact = () => {
         if (entry.isIntersecting) {
           entry.target.classList.add("in-view");
         } else {
-          // Remove class when out of view for continuous animation
           if (entry.boundingClientRect.top > 0) {
             entry.target.classList.remove("in-view");
           }

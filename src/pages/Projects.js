@@ -14,18 +14,18 @@ const projectData = [
         techStack: ["React", "Firebase", "CSS3", "PWA"],
         mobileImg: eggStockMobille,
         desktopImg: eggStockDesktop,
-        liveLink: "https://stockcontrol-556e4.web.app",
+        liveLink: "",
         githubLink: "https://github.com/savage-kid-lk/EggBusinessManagement"
     },
     {
         id: 2,
         title: "E-Voting System",
         description: "A secure electronic voting platform designed for local elections. This system ensures voter anonymity while maintaining a transparent and immutable audit trail using modern web security practices.",
-        techStack: ["Node.js", "Express", "MongoDB", "React"],
+        techStack: ["Java", "Node.js", "Express", "Railway"],
         mobileImg: eVotingMobile,
         desktopImg: eVotingDesktop,
-        liveLink: "#",
-        githubLink: "#"
+        liveLink: "",
+        githubLink: "https://github.com/savage-kid-lk/electronicvoting"
     }
 ];
 
@@ -82,13 +82,19 @@ const Projects = () => {
                                 ))}
                             </div>
                             <p className="project-desc">{project.description}</p>
+                            
                             <div className="project-links">
-                                <a href={project.liveLink} target="_blank" rel="noreferrer" className="btn btn-live">
-                                    <FaExternalLinkAlt /> Live Demo
-                                </a>
-                                <a href={project.githubLink} target="_blank" rel="noreferrer" className="btn btn-code">
-                                    <FaGithub /> Source Code
-                                </a>
+                                {project.liveLink && (
+                                    <a href={project.liveLink} target="_blank" rel="noreferrer" className="btn btn-live">
+                                        <FaExternalLinkAlt /> Live Demo
+                                    </a>
+                                )}
+                                
+                                {project.githubLink && (
+                                    <a href={project.githubLink} target="_blank" rel="noreferrer" className="btn btn-code">
+                                        <FaGithub /> Source Code
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </section>

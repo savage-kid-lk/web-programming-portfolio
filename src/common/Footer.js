@@ -4,16 +4,32 @@ import '../styles/footer.css';
 
 const Footer = () => {
     const socialLinks = [
-        { name: "Github", url: "https://github.com/savage-kid-lk", icon: "https://img.icons8.com/ios-glyphs/90/github.png" },
-        { name: "LinkedIn", url: "https://www.linkedin.com/in/letago-kekana-34087a279/", icon: "https://img.icons8.com/ios-glyphs/90/linkedin.png" },
-        { name: "Facebook", url: "https://www.facebook.com/letago.kekana.7737/", icon: "https://img.icons8.com/ios-glyphs/90/facebook-new.png" },
-        { name: "Instagram", url: "https://www.instagram.com/savage_kid_lk/", icon: "https://img.icons8.com/ios-glyphs/90/instagram-new.png" }
+        {
+            name: "Github",
+            url: "https://github.com/savage-kid-lk",
+            icon: "https://img.icons8.com/ios-glyphs/90/github.png"
+        },
+        {
+            name: "LinkedIn",
+            url: "https://www.linkedin.com/in/letago-kekana-34087a279/",
+            icon: "https://img.icons8.com/ios-glyphs/90/linkedin.png"
+        },
+        {
+            name: "Facebook",
+            url: "https://www.facebook.com/letago.kekana.7737/",
+            icon: "https://img.icons8.com/ios-glyphs/90/facebook-new.png"
+        },
+        {
+            name: "Instagram",
+            url: "https://www.instagram.com/savage_kid_lk/",
+            icon: "https://img.icons8.com/ios-glyphs/90/instagram-new.png"
+        }
     ];
 
     return (
         <footer className="footer">
             <div className="footer-stars-overlay"></div>
-            
+
             <div className="my-github">
                 <h2>VIEW MY PROJECTS ON GITHUB</h2>
                 <p>Computer Science Graduate | Frontend Developer | Problem Solver</p>

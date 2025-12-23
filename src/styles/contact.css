@@ -1,6 +1,3 @@
-/* ============================
-    CONTACT PAGE BASE
-============================ */
 .contact-page {
   min-height: 100vh;
   display: flex;
@@ -40,7 +37,6 @@
   to { transform: translate(-15%, -15%); }
 }
 
-/* CONTACT HEADING */
 .contact-heading {
   font-size: clamp(28px, 6vw, 48px);
   text-align: center;
@@ -61,7 +57,6 @@
   opacity: 1;
 }
 
-/* MAIN CONTENT WRAPPER */
 .contact-content {
   display: flex;
   justify-content: space-between;
@@ -74,7 +69,6 @@
   z-index: 5;
 }
 
-/* LEFT SIDE: DETAILS */
 .contact-details {
   display: flex;
   flex-direction: column;
@@ -153,7 +147,6 @@
   text-shadow: 0 0 10px #00eaff;
 }
 
-/* RIGHT SIDE: DECORATION */
 .decoration-container {
   flex: 1;
   max-width: 500px;
@@ -172,9 +165,7 @@
   opacity: 1;
 }
 
-/* ============================
-    RESPONSIVE DESIGN
-============================ */
+/* RESPONSIVENESS*/
 @media (max-width: 1024px) {
   .contact-content { gap: 30px; }
   .decoration-container { max-width: 400px; height: 400px; }
@@ -196,9 +187,7 @@
   .decoration-container { height: 350px; width: 100%; }
 }
 
-/* ============================
-    ICON LOOP ANIMATIONS
-============================ */
+/* ICON ANIMATIONS */
 .icon-float { animation: float 3s ease-in-out infinite; }
 @keyframes float {
   0%, 100% { transform: translateY(0); }
